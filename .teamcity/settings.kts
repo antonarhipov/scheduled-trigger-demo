@@ -27,7 +27,6 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2019.1"
 
 project {
-
     buildType(BuildC)
     buildType(BuildD)
     buildType(BuildA)
@@ -42,9 +41,6 @@ object BuildA : BuildType({
     steps {
         script {
             scriptContent = "echo %build.number% > file.txt"
-            param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
-            param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
-            param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
         }
     }
 
@@ -68,9 +64,6 @@ object BuildB : BuildType({
     steps {
         script {
             scriptContent = "cat file.txt"
-            param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
-            param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
-            param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
         }
     }
 
@@ -95,9 +88,6 @@ object BuildC : BuildType({
     steps {
         script {
             scriptContent = "echo %build.number% > file.txt"
-            param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
-            param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
-            param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
         }
     }
 })
@@ -108,9 +98,6 @@ object BuildD : BuildType({
     steps {
         script {
             scriptContent = "cat file.txt"
-            param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
-            param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
-            param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
         }
     }
 
